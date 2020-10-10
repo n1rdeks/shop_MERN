@@ -1,1 +1,1 @@
-# shop_mern
+# shop on MERN stack (Mongo, Express, React, Node)

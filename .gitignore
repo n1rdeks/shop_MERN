@@ -1,0 +1,17 @@
+.idea
+.vscode
+node_modules/
+node_modules
+
+npm-debug.log
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# secrets
+.env
