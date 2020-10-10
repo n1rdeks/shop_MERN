@@ -25,9 +25,6 @@ const ProductScreen = ({match}) => {
                                     value={product.rating} />
                         </ListGroupItem>
                         <ListGroupItem>
-                           Price: ${product.price}
-                        </ListGroupItem>
-                        <ListGroupItem>
                             Description: {product.description}
                         </ListGroupItem>
                     </ListGroup>
