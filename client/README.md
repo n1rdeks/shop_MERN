@@ -1,3 +1,5 @@
+# This is CLIENT of MERN Shop (React, Redux)
+
 In the project directory, you can run:
 
 ### `npm start`

@@ -1,0 +1,67 @@
+[8:52:59.658] Global cache location '/tmp/master/.cache/typescript/4.0', safe file path '/usr/lib/node_modules/typescript/lib/typingSafeList.json', types map path /usr/lib/node_modules/typescript/lib/typesMap.json
+[8:52:59.659] Processing cache location '/tmp/master/.cache/typescript/4.0'
+[8:52:59.659] Trying to find '/tmp/master/.cache/typescript/4.0/package.json'...
+[8:52:59.659] Loaded content of '/tmp/master/.cache/typescript/4.0/package.json': {"private":true,"dependencies":{"types-registry":"^0.1.511"},"devDependencies":{"@types/faker":"^5.1.2","@types/history":"^4.7.8","@types/react-router":"^5.1.8","@types/react-router-bootstrap":"^0.24.5","@types/react-router-dom":"^5.1.6"}}
+[8:52:59.659] Loaded content of '/tmp/master/.cache/typescript/4.0/package-lock.json'
+[8:52:59.669] Adding entry into typings cache: 'faker' => '/tmp/master/.cache/typescript/4.0/node_modules/@types/faker/index.d.ts'
+[8:52:59.672] Adding entry into typings cache: 'history' => '/tmp/master/.cache/typescript/4.0/node_modules/@types/history/index.d.ts'
+[8:52:59.676] Adding entry into typings cache: 'react-router' => '/tmp/master/.cache/typescript/4.0/node_modules/@types/react-router/index.d.ts'
+[8:52:59.679] Adding entry into typings cache: 'react-router-bootstrap' => '/tmp/master/.cache/typescript/4.0/node_modules/@types/react-router-bootstrap/index.d.ts'
+[8:52:59.683] Adding entry into typings cache: 'react-router-dom' => '/tmp/master/.cache/typescript/4.0/node_modules/@types/react-router-dom/index.d.ts'
+[8:52:59.683] Finished processing cache location '/tmp/master/.cache/typescript/4.0'
+[8:52:59.684] Process id: 135744
+[8:52:59.684] NPM location: /usr/bin/npm (explicit '--npmLocation' not  provided)
+[8:52:59.684] validateDefaultNpmLocation: false
+[8:52:59.684] Npm config file: /tmp/master/.cache/typescript/4.0/package.json
+[8:52:59.684] Updating types-registry npm package...
+[8:52:59.684] Exec: /usr/bin/npm install --ignore-scripts types-registry@latest
+[8:53:0.705]     Succeeded. stdout:
+    + types-registry@0.1.511
+    updated 1 package and audited 10 packages in 0.561s
+found 0 vulnerabilities
+
+
+[8:53:0.706] Updated types-registry npm package
+[8:53:3.234] Got install request {"projectName":"/dev/null/inferredProject1*","fileNames":["/usr/lib/node_modules/typescript/lib/lib.d.ts","/usr/lib/node_modules/typescript/lib/lib.es5.d.ts","/usr/lib/node_modules/typescript/lib/lib.dom.d.ts","/usr/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts","/usr/lib/node_modules/typescript/lib/lib.scripthost.d.ts","/home/master/code/shop_MERN/client/src/products.js","/home/master/code/shop_MERN/client/src/components/Rating.js","/home/master/code/shop_MERN/client/src/screens/ProductScreen.js"],"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/master/code/shop_MERN/client/src/screens","kind":"discover"}
+[8:53:3.267] Loaded safelist from types map file '/usr/lib/node_modules/typescript/lib/typesMap.json'
+[8:53:3.268] Explicitly included types: []
+[8:53:3.271] Inferred typings from unresolved imports: []
+[8:53:3.272] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/master/code/shop_MERN/client/src/bower_components","/home/master/code/shop_MERN/client/src/node_modules","/home/master/code/shop_MERN/client/src/components/bower_components","/home/master/code/shop_MERN/client/src/components/node_modules","/home/master/code/shop_MERN/client/src/screens/bower_components","/home/master/code/shop_MERN/client/src/screens/node_modules"]}
+[8:53:3.272] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/master/code/shop_MERN/client/src/bower_components","/home/master/code/shop_MERN/client/src/node_modules","/home/master/code/shop_MERN/client/src/components/bower_components","/home/master/code/shop_MERN/client/src/components/node_modules","/home/master/code/shop_MERN/client/src/screens/bower_components","/home/master/code/shop_MERN/client/src/screens/node_modules"]}
+[8:53:3.273] DirectoryWatcher:: Added:: WatchInfo: /home/master/code/shop_MERN/client/src/bower_components
+[8:53:3.276] DirectoryWatcher:: Added:: WatchInfo: /home/master/code/shop_MERN/client/src/node_modules
+[8:53:3.276] DirectoryWatcher:: Added:: WatchInfo: /home/master/code/shop_MERN/client/src/components/bower_components
+[8:53:3.276] DirectoryWatcher:: Added:: WatchInfo: /home/master/code/shop_MERN/client/src/components/node_modules
+[8:53:3.277] DirectoryWatcher:: Added:: WatchInfo: /home/master/code/shop_MERN/client/src/screens/bower_components
+[8:53:3.277] DirectoryWatcher:: Added:: WatchInfo: /home/master/code/shop_MERN/client/src/screens/node_modules
+[8:53:3.277] Sending response:
+    {"projectName":"/dev/null/inferredProject1*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[8:53:3.278] Response has been sent.
+[8:53:3.278] No new typings were requested as a result of typings discovery
+[8:53:41.980] Got install request {"projectName":"/dev/null/inferredProject1*","fileNames":["/usr/lib/node_modules/typescript/lib/lib.d.ts","/usr/lib/node_modules/typescript/lib/lib.es5.d.ts","/usr/lib/node_modules/typescript/lib/lib.dom.d.ts","/usr/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts","/usr/lib/node_modules/typescript/lib/lib.scripthost.d.ts","/home/master/code/shop_MERN/client/src/products.js","/home/master/code/shop_MERN/client/src/components/Rating.js","/home/master/code/shop_MERN/client/src/screens/ProductScreen.js"],"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/master/code/shop_MERN/client/src/screens","kind":"discover"}
+[8:53:41.981] Explicitly included types: []
+[8:53:41.981] Inferred typings from unresolved imports: []
+[8:53:41.981] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/master/code/shop_MERN/client/src/bower_components","/home/master/code/shop_MERN/client/src/node_modules","/home/master/code/shop_MERN/client/src/components/bower_components","/home/master/code/shop_MERN/client/src/components/node_modules","/home/master/code/shop_MERN/client/src/screens/bower_components","/home/master/code/shop_MERN/client/src/screens/node_modules"]}
+[8:53:41.981] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/master/code/shop_MERN/client/src/bower_components","/home/master/code/shop_MERN/client/src/node_modules","/home/master/code/shop_MERN/client/src/components/bower_components","/home/master/code/shop_MERN/client/src/components/node_modules","/home/master/code/shop_MERN/client/src/screens/bower_components","/home/master/code/shop_MERN/client/src/screens/node_modules"]}
+[8:53:41.982] Sending response:
+    {"projectName":"/dev/null/inferredProject1*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[8:53:41.982] Response has been sent.
+[8:53:41.982] No new typings were requested as a result of typings discovery
+[8:54:29.840] Got install request {"projectName":"/dev/null/inferredProject1*","fileNames":["/usr/lib/node_modules/typescript/lib/lib.d.ts","/usr/lib/node_modules/typescript/lib/lib.es5.d.ts","/usr/lib/node_modules/typescript/lib/lib.dom.d.ts","/usr/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts","/usr/lib/node_modules/typescript/lib/lib.scripthost.d.ts","/home/master/code/shop_MERN/client/src/products.js","/home/master/code/shop_MERN/client/src/components/Rating.js","/home/master/code/shop_MERN/client/src/screens/ProductScreen.js"],"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/master/code/shop_MERN/client/src/screens","kind":"discover"}
+[8:54:29.841] Explicitly included types: []
+[8:54:29.841] Inferred typings from unresolved imports: []
+[8:54:29.841] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/master/code/shop_MERN/client/src/bower_components","/home/master/code/shop_MERN/client/src/node_modules","/home/master/code/shop_MERN/client/src/components/bower_components","/home/master/code/shop_MERN/client/src/components/node_modules","/home/master/code/shop_MERN/client/src/screens/bower_components","/home/master/code/shop_MERN/client/src/screens/node_modules"]}
+[8:54:29.842] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/master/code/shop_MERN/client/src/bower_components","/home/master/code/shop_MERN/client/src/node_modules","/home/master/code/shop_MERN/client/src/components/bower_components","/home/master/code/shop_MERN/client/src/components/node_modules","/home/master/code/shop_MERN/client/src/screens/bower_components","/home/master/code/shop_MERN/client/src/screens/node_modules"]}
+[8:54:29.842] Sending response:
+    {"projectName":"/dev/null/inferredProject1*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[8:54:29.842] Response has been sent.
+[8:54:29.842] No new typings were requested as a result of typings discovery
+[8:56:37.103] Got install request {"projectName":"/dev/null/inferredProject1*","fileNames":["/usr/lib/node_modules/typescript/lib/lib.d.ts","/usr/lib/node_modules/typescript/lib/lib.es5.d.ts","/usr/lib/node_modules/typescript/lib/lib.dom.d.ts","/usr/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts","/usr/lib/node_modules/typescript/lib/lib.scripthost.d.ts","/home/master/code/shop_MERN/client/src/products.js","/home/master/code/shop_MERN/client/src/components/Rating.js","/home/master/code/shop_MERN/client/src/screens/ProductScreen.js"],"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/master/code/shop_MERN/client/src/screens","kind":"discover"}
+[8:56:37.103] Explicitly included types: []
+[8:56:37.104] Inferred typings from unresolved imports: []
+[8:56:37.104] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/master/code/shop_MERN/client/src/bower_components","/home/master/code/shop_MERN/client/src/node_modules","/home/master/code/shop_MERN/client/src/components/bower_components","/home/master/code/shop_MERN/client/src/components/node_modules","/home/master/code/shop_MERN/client/src/screens/bower_components","/home/master/code/shop_MERN/client/src/screens/node_modules"]}
+[8:56:37.104] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/master/code/shop_MERN/client/src/bower_components","/home/master/code/shop_MERN/client/src/node_modules","/home/master/code/shop_MERN/client/src/components/bower_components","/home/master/code/shop_MERN/client/src/components/node_modules","/home/master/code/shop_MERN/client/src/screens/bower_components","/home/master/code/shop_MERN/client/src/screens/node_modules"]}
+[8:56:37.104] Sending response:
+    {"projectName":"/dev/null/inferredProject1*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[8:56:37.104] Response has been sent.
+[8:56:37.104] No new typings were requested as a result of typings discovery
