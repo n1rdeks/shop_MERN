@@ -1,3 +1,5 @@
 ## shop on MERN stack (Mongo, Express, React, Node)
 
-for start locally: npm run dev
+for start locally after clone:
+
+### `npm run dev`
