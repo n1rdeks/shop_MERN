@@ -1,15 +1,22 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { productListReducer, productDetailsReducer } from './reducers/productReducers';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 
+import { productListReducer, productDetailsReducer } from './reducers/productReducers';
+import { basketReducer } from './reducers/basketReducers';
 
 const reducer = combineReducers({
     productList: productListReducer,
-    productDetails: productDetailsReducer
+    productDetails: productDetailsReducer,
+    basket: basketReducer
 });
 
-const initialState = {};
+const basketItemsFromLocalStore = localStorage.getItem('basketItems') ?
+    JSON.parse(localStorage.getItem('basketItems')) : [];
+
+const initialState = {
+    basket: { basketItems: basketItemsFromLocalStore }
+};
 
 const middleware = [thunk];
 
