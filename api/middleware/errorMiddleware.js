@@ -5,7 +5,7 @@ const notFound = (req, res, next) => {
 };
 
 const errorHandler = (err, req, res, next) => {
-    // need change code, because server response 200 error body
+    // need change code, because server response Ok, but send error.
     const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
 
     res.status(statusCode);
