@@ -1,16 +1,17 @@
 import mongoose from 'mongoose';
 import User from "./userModel.js";
+import Product from "./productModel.js";
 
 
 const orderSchema = mongoose.Schema({
-    user: {type: mongoose.Schema.ObjectId, required: true, ref: 'User'},
+    user: {type: mongoose.Schema.Types.ObjectId, required: true, ref: 'User'},
     orderItems: [
         {
             name: {type: String, required: true},
             qty: {type: String, required: true},
             image: {type: String, required: true},
             price: {type: Number, required: true},
-            product: {type: mongoose.Schema.ObjectId, required: true, ref: 'Product'}
+            productId: {type: mongoose.Schema.Types.ObjectId, required: true, ref: 'Product'}
         }
     ],
     shippingAddress: {
@@ -18,7 +19,6 @@ const orderSchema = mongoose.Schema({
         city: {type: String, required: true},
         postalCode: {type: String, required: true},
         country: {type: String, required: true}
-
     },
     paymentMethod: {type: String, required: true },
     paymentResult: {
@@ -39,4 +39,3 @@ const orderSchema = mongoose.Schema({
 const Order = mongoose.model('Order', orderSchema);
 
 export default Order;
-

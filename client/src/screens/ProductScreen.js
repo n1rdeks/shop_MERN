@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { ListGroup, Row, Col, ListGroupItem, Card, Button, Image, Form } from "react-bootstrap";
 
@@ -23,9 +22,7 @@ const ProductScreen = ({ history, match }) => {
 
     return (
         <>
-            <Link className='btn btn-dark my-3' to='/'>
-                Go Back
-            </Link>
+            <Button className="btn-dark" onClick={history.goBack}>Go back</Button>
             {loading ? <Loader /> : error ? (
                 <Message variant='danger'>{error}</Message>
             ) : (

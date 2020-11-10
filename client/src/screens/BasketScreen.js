@@ -36,7 +36,7 @@ const BasketScreen = ({ match, location, history }) => {
                 <h1>Shopping Basket</h1>
                 {basketItems.length === 0 ? (
                     <Message>
-                        Your basket is empty&nbsp;&nbsp;<Link to="/">Go back</Link>
+                        Your basket is empty&nbsp;&nbsp;<Link to="/">select products</Link>
                     </Message>
                 ) : (
                         <ListGroup variant='flush'>
