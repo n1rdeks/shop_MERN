@@ -8,7 +8,7 @@ import {
     userLoginReducer, userRegisterReducer,
     userDetailsReducer, userUpdateProfileReducer
 } from './reducers/userReducers';
-import { orderCreatReducer } from './reducers/orderReducers';
+import { orderCreateReducer, orderDetailsReducer } from './reducers/orderReducers';
 
 const reducer = combineReducers({
     productList: productListReducer,
@@ -18,7 +18,8 @@ const reducer = combineReducers({
     userRegister: userRegisterReducer,
     userDetails: userDetailsReducer,
     userUpdateProfile: userUpdateProfileReducer,
-    orderCreate: orderCreatReducer
+    orderCreate: orderCreateReducer,
+    orderDetails: orderDetailsReducer
 });
 
 const basketItemsFromLocalStore = localStorage.getItem('basketItems') ?
@@ -35,8 +36,8 @@ const shippingAddressFromStorage = localStorage.getItem('shippingAddress')
 
 const initialState = {
     basket: {
-      basketItems: basketItemsFromLocalStore,
-      shippingAddress: shippingAddressFromStorage
+        basketItems: basketItemsFromLocalStore,
+        shippingAddress: shippingAddressFromStorage
     },
     userLogin: { userInfo: userInfoFromLocalStorage }
 };
