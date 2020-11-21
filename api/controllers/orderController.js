@@ -43,7 +43,15 @@ const getOrderById = expressAsyncHandler(async (req, res) => {
     }
 });
 
+// @route   GET /api/orders/userorders
+// @access  Private
+const getUserOrders = expressAsyncHandler(async (req, res) => {
+    const orders = await Order.find({ user: req.user._id });
+    res.json(orders);
+});
+
 export {
     addOrderItems,
-    getOrderById
+    getOrderById,
+    getUserOrders
 };
