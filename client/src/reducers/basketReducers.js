@@ -1,7 +1,8 @@
 import {
     BASKET_ADD_ITEM, BASKET_REMOVE_ITEM,
     BASKET_SAVE_SHIPPING_ADDRESS,
-    BASKET_SAVE_PAYMENT_METHOD
+    BASKET_SAVE_PAYMENT_METHOD,
+    BASKET_RESET
 } from '../constants/basketConstants';
 
 
@@ -26,6 +27,8 @@ export const basketReducer = (state = { basketItems: [], shippingAddress: {} }, 
                 basketItems: state.basketItems.filter(x => x.productId !== action.payload)
 
             };
+        case BASKET_RESET:
+            return { basketItems: [], shippingAddress: {} };
         case BASKET_SAVE_SHIPPING_ADDRESS:
             return { ...state, shippingAddress: action.payload };
         case BASKET_SAVE_PAYMENT_METHOD:

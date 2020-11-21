@@ -1,15 +1,17 @@
 import axios from 'axios';
 
 import {
-  ORDER_CREATE_REQUEST,
-  ORDER_CREATE_SUCCESS,
-  ORDER_CREATE_FAIL,
-  ORDER_DETAILS_FAIL,
-  ORDER_DETAILS_REQUEST,
-  ORDER_DETAILS_SUCCESS,
-  ORDER_USER_LIST_REQUEST,
-  ORDER_USER_LIST_SUCCESS, ORDER_USER_LIST_FAIL
+    ORDER_CREATE_REQUEST,
+    ORDER_CREATE_SUCCESS,
+    ORDER_CREATE_FAIL,
+    ORDER_DETAILS_FAIL,
+    ORDER_DETAILS_REQUEST,
+    ORDER_DETAILS_SUCCESS,
+    ORDER_USER_LIST_REQUEST,
+    ORDER_USER_LIST_SUCCESS, ORDER_USER_LIST_FAIL
 } from '../constants/orderConstants';
+import { BASKET_RESET } from '../constants/basketConstants';
+
 
 
 export const createOrder = order => async (dispatch, getState) => {
@@ -27,6 +29,7 @@ export const createOrder = order => async (dispatch, getState) => {
         const { data } = await axios.post(`/api/orders`, order, config);
 
         dispatch({ type: ORDER_CREATE_SUCCESS, payload: data });
+        dispatch({ type: BASKET_RESET });
     } catch (error) {
         dispatch({
             type: ORDER_CREATE_FAIL,
