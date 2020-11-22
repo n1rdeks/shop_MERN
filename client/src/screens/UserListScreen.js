@@ -5,11 +5,12 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Message from '../components/Message';
 import Loader from '../components/Loader';
-import { listUsers } from '../actions/userActions';
+import { listUsers, deleteUser } from '../actions/userActions';
 
 const UserListScreen = ({ history }) => {
     const dispatch = useDispatch();
     const { loading, error, users } = useSelector(state => state.userList);
+    const { success: successDelete } = useSelector(state => state.userDelete);
     const { userInfo } = useSelector(state => state.userLogin);
 
     useEffect(() => {
@@ -18,10 +19,14 @@ const UserListScreen = ({ history }) => {
         } else {
             history.push('/login');
         }
-    }, [dispatch, history]);
+        // added successDelete for update list users after delete.
+    }, [dispatch, history, userInfo, successDelete]);
 
     const deleteHandler = (userId) => {
-        console.log('deleted');
+        if (window.confirm('Are you sure?')) {
+            dispatch(deleteUser(userId));
+        }
+
     };
 
     return (
