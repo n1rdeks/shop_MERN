@@ -5,13 +5,18 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Message from '../components/Message';
 import Loader from '../components/Loader';
-import { listProducts } from '../actions/productActions';
+import { deleteProduct, listProducts } from '../actions/productActions';
 
 
 const ProductListScreen = ({ history, match }) => {
     const dispatch = useDispatch();
-    const { loading, error, products } = useSelector(state => state.productList);
 
+    const { loading, error, products } = useSelector(state => state.productList);
+    const {
+        loading: loadingDelete,
+        error: errorDelete,
+        success: successDelete
+    } = useSelector(state => state.productDelete);
     const { userInfo } = useSelector(state => state.userLogin);
 
     useEffect(() => {
@@ -21,11 +26,11 @@ const ProductListScreen = ({ history, match }) => {
             history.push('/login');
         }
         // added successDelete for update list users after delete.
-    }, [ dispatch, history, userInfo ]);
+    }, [ dispatch, history, userInfo, successDelete ]);
 
     const deleteHandler = id => {
         if (window.confirm('Are you sure?')) {
-            // DELETE PRODUCTS
+            dispatch(deleteProduct(id));
         }
     };
 
@@ -43,6 +48,8 @@ const ProductListScreen = ({ history, match }) => {
                     <i className='fas fa-plus'></i> Create product
                 </Col>
             </Row>
+            {loadingDelete && <Loader />}
+            {errorDelete && <Message variant='danger'>{errorDelete}</Message>}
             {loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> :
                 (
                     <Table striped bordered hover responsive className="table-sm">
