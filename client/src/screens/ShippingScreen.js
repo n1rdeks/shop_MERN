@@ -9,7 +9,6 @@ import CheckoutSteps from '../components/CheckoutSteps';
 
 const ShippingScreen = ({ history }) => {
     const { shippingAddress } = useSelector(state => state.basket);
-
     const [address, setAddress] = useState(shippingAddress.address);
     const [city, setCity] = useState(shippingAddress.city);
     const [postalCode, setPostalCode] = useState(shippingAddress.postalCode);
