@@ -71,7 +71,6 @@ const updateProduct = expressAsyncHandler(async (req, res) => {
         product.brand = req.body.brand;
         product.category = req.body.category;
         product.countInStock = req.body.countInStock;
-        product.numReviews = req.body.numReviews;
         product.description = req.body.description;
 
         const result = await product.save();
