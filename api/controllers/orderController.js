@@ -1,13 +1,15 @@
-import expressAsyncHandler from "express-async-handler";
+import expressAsyncHandler from 'express-async-handler';
 
-import Order from "../models/orderModel.js";
+import Order from '../models/orderModel.js';
 
 
 // @route   POST /api/orders
 // @access  Private
 const addOrderItems = expressAsyncHandler(async (req, res) => {
-    const { orderItems, shippingAddress, paymentMethod,
-        itemsPrice, taxPrice, shippingPrice, totalPrice } = req.body;
+    const {
+        orderItems, shippingAddress, paymentMethod,
+        itemsPrice, taxPrice, shippingPrice, totalPrice
+    } = req.body;
 
     if (orderItems && orderItems.length === 0) {
         res.status(400);

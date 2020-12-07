@@ -1,8 +1,7 @@
-import expressAsyncHandler from "express-async-handler";
+import expressAsyncHandler from 'express-async-handler';
 
 import generateToken from '../utils/generateToken.js';
-import User from "../models/userModel.js";
-
+import User from '../models/userModel.js';
 
 // @route   POST /api/users
 // @access  Public
@@ -117,7 +116,7 @@ const deleteUser = expressAsyncHandler(async (req, res) => {
 
     if (user) {
         await user.remove();
-        res.json({ message: "User removed" });
+        res.json({ message: 'User removed' });
     } else {
         res.status(404);
         throw new Error('User not found');
@@ -160,7 +159,6 @@ const updateUser = expressAsyncHandler(async (req, res) => {
         throw new Error('User not found!');
     }
 });
-
 
 export {
     authUser, getUserProfile,
