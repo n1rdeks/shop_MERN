@@ -12,27 +12,29 @@ const HomeScreen = () => {
     const dispatch = useDispatch();
     const { loading, error, products } = useSelector(state => state.productList);
 
-
     useEffect(() => {
         dispatch(listProducts());
-    }, [ dispatch ]);
-
+    }, [dispatch]);
 
     return (
         <>
             <h1>Latest Products</h1>
-            {loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> :
+            {loading ? <Loader/> : error ? <Message variant='danger'>{error}</Message> :
                 <Row>
                     {products.map(product => (
-                        <Col className="card-group" key={product._id} sm={12} md={6} lg={4} xl={3}>
-                            <Product product={product} />
+                        <Col className="card-group"
+                             key={product._id}
+                             sm={12}
+                             md={6}
+                             lg={4}
+                             xl={3}>
+                            <Product product={product}/>
                         </Col>
                     ))}
                 </Row>
             }
         </>
     );
-
 
 };
 

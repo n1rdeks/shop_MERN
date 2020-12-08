@@ -15,31 +15,36 @@ const Header = () => {
 
     return (
         <header>
-            <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
+            <Navbar bg="dark"
+                    variant="dark"
+                    expand="lg"
+                    collapseOnSelect>
                 <Container>
                     <LinkContainer to="/">
                         <Navbar.Brand>Shop MERN</Navbar.Brand>
                     </LinkContainer>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ml-auto">
                             <LinkContainer to="/basket">
                                 <Nav.Link><i className="fas fa-shopping-cart"></i> Basket</Nav.Link>
                             </LinkContainer>
                             {userInfo ? (
-                                <NavDropdown title={userInfo.name} id='username'>
+                                <NavDropdown title={userInfo.name}
+                                             id='username'>
                                     <LinkContainer to='/profile'>
                                         <NavDropdown.Item>Profile</NavDropdown.Item>
                                     </LinkContainer>
                                     <NavDropdown.Item onClick={logoutHandler}>
                                         Logout
-                                </NavDropdown.Item>
+                                    </NavDropdown.Item>
                                 </NavDropdown>
                             ) : (<LinkContainer to="/login">
                                 <Nav.Link><i className="fas fa-user"></i> Sign In</Nav.Link>
                             </LinkContainer>)}
                             {userInfo && userInfo.isAdmin && (
-                                <NavDropdown title='Admin' id='adminMenu'>
+                                <NavDropdown title='Admin'
+                                             id='adminMenu'>
                                     <LinkContainer to='/admin/userList'>
                                         <NavDropdown.Item>Users</NavDropdown.Item>
                                     </LinkContainer>

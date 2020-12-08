@@ -10,7 +10,6 @@ import { isAdmin, protect } from '../middleware/authMiddleware.js';
 
 const router = express.Router();
 
-
 // fu fu route...
 // This shit have fu orders. order fu matter!
 // If i set /:id on top, all fu construction not work.
@@ -28,6 +27,5 @@ router.route('/:id')
     .put(protect, isAdmin, updateUser);
 
 router.post('/login', authUser);
-
 
 export default router;

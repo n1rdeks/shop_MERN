@@ -1,11 +1,11 @@
 import dotenv from 'dotenv';
 
-import Product from "./models/productModel.js";
-import users from "./data/users.js";
-import products from "./data/products.js";
-import User from "./models/userModel.js";
-import Order from "./models/orderModel.js";
-import connectDB from "./config/db.js";
+import Product from './models/productModel.js';
+import users from './data/users.js';
+import products from './data/products.js';
+import User from './models/userModel.js';
+import Order from './models/orderModel.js';
+import connectDB from './config/db.js';
 
 
 dotenv.config();
@@ -21,7 +21,7 @@ const importData = async () => {
         const createdUsers = await User.insertMany(users);
         const adminUser = createdUsers[0]._id;
         const sampleProducts = products.map(prod => {
-            return {...prod, user: adminUser};
+            return { ...prod, user: adminUser };
         });
 
         await Product.insertMany(sampleProducts);
@@ -33,7 +33,6 @@ const importData = async () => {
         process.exit(1);
     }
 };
-
 
 const deleteData = async () => {
     try {
@@ -49,8 +48,7 @@ const deleteData = async () => {
     }
 };
 
-
-if(process.argv[2] === '-d'){
+if (process.argv[2] === '-d') {
     deleteData();
 } else {
     importData();

@@ -15,7 +15,7 @@ const PlaceOrderScreen = ({ history }) => {
 
     useEffect(() => {
         if (success) {
-            history.push(`/order/${ order._id }`);
+            history.push(`/order/${order._id}`);
         }
         // eslint-disable-next-line
     }, [history, success]);
@@ -52,7 +52,9 @@ const PlaceOrderScreen = ({ history }) => {
 
     return (
         <>
-            <CheckoutSteps step1 step2 step3 />
+            <CheckoutSteps step1
+                           step2
+                           step3/>
             <Row>
                 <Col md={8}>
                     <ListGroup variant="flush">
@@ -81,17 +83,19 @@ const PlaceOrderScreen = ({ history }) => {
                                             <ListGroup.Item key={index}>
                                                 <Row>
                                                     <Col md={1}>
-                                                        <Image src={item.image} alt={item.name}
-                                                            fluid rounded />
+                                                        <Image src={item.image}
+                                                               alt={item.name}
+                                                               fluid
+                                                               rounded/>
                                                     </Col>
                                                     <Col>
-                                                        <Link to={`/product/${ item.productId }`}>
+                                                        <Link to={`/product/${item.productId}`}>
                                                             {item.name}
                                                         </Link>
                                                     </Col>
                                                     <Col md={4}>
                                                         {item.qty} x ${item.price} = ${item.qty *
-                                                            item.price}
+                                                    item.price}
                                                     </Col>
                                                 </Row>
                                             </ListGroup.Item>
@@ -135,9 +139,10 @@ const PlaceOrderScreen = ({ history }) => {
                                 {error && <Message variant='danger'>{error}</Message>}
                             </ListGroup.Item>
                             <ListGroup.Item>
-                                <Button type="button" className="btn-block"
-                                    disabled={basket.basketItems.length === 0}
-                                    onClick={placeOrderHandler}>
+                                <Button type="button"
+                                        className="btn-block"
+                                        disabled={basket.basketItems.length === 0}
+                                        onClick={placeOrderHandler}>
                                     Place order
                                 </Button>
                             </ListGroup.Item>

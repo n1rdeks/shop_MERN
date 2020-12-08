@@ -11,12 +11,12 @@ const storage = multer.diskStorage({
     },
     filename (req, file, cb) {
         // for remove duplicates on filename
-        cp(null, `${this.fieldname}-${Date.now()}${path.extname(file.originalname)}`);
+        cb(null, `${file.fieldname}-${Date.now()}${path.extname(file.originalname)}`);
     }
 });
 
 const checkFileType = (file, cb) => {
-    const filetypes = /jpeg|jpg`|png/;
+    const filetypes = /jpeg|jpg|png/;
     const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
     const mimetype = filetypes.test(file.mimetype);
 

@@ -38,7 +38,7 @@ const ProductListScreen = ({ history, match }) => {
         }
 
         // added successDelete for update list users after delete.
-    }, [ dispatch, history, userInfo, successDelete, successCreate, createdProduct ]);
+    }, [dispatch, history, userInfo, successDelete, successCreate, createdProduct]);
 
     const deleteHandler = id => {
         if (window.confirm('Are you sure?')) {
@@ -57,49 +57,56 @@ const ProductListScreen = ({ history, match }) => {
                     <h1>Products</h1>
                 </Col>
                 <Col className='text-right'>
-                    <Button className='my-3' onClick={createProductHandler}>
+                    <Button className='my-3'
+                            onClick={createProductHandler}>
                         <i className='fas fa-plus'></i> Create product
                     </Button>
                 </Col>
             </Row>
-            {loadingDelete && <Loader />}
+            {loadingDelete && <Loader/>}
             {errorDelete && <Message variant='danger'>{errorDelete}</Message>}
-            {loadingCreate && <Loader />}
+            {loadingCreate && <Loader/>}
             {errorCreate && <Message variant='danger'>{errorCreate}</Message>}
-            {loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> :
+            {loading ? <Loader/> : error ? <Message variant='danger'>{error}</Message> :
                 (
-                    <Table striped bordered hover responsive className="table-sm">
+                    <Table striped
+                           bordered
+                           hover
+                           responsive
+                           className="table-sm">
                         <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>NAME</th>
-                                <th>PRICE</th>
-                                <th>CATEGORY</th>
-                                <th>BRAND</th>
-                                <th>ACTIONS</th>
-                            </tr>
+                        <tr>
+                            <th>ID</th>
+                            <th>NAME</th>
+                            <th>PRICE</th>
+                            <th>CATEGORY</th>
+                            <th>BRAND</th>
+                            <th>ACTIONS</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            {products.map(product => (
-                                <tr key={product._id}>
-                                    <td>{product._id}</td>
-                                    <td>{product.name}</td>
-                                    <td>${product.price}</td>
-                                    <td>{product.category}</td>
-                                    <td>{product.brand}</td>
-                                    <td>
-                                        <LinkContainer to={`/admin/product/${product._id}/edit`}>
-                                            <Button variant="light" className="btn-sm">
-                                                <i className="fas fa-edit"></i>
-                                            </Button>
-                                        </LinkContainer>
-                                        <Button variant="danger" className="btn-sm"
-                                            onClick={() => deleteHandler(product._id)}>
-                                            <i className="fas fa-trash"></i>
+                        {products.map(product => (
+                            <tr key={product._id}>
+                                <td>{product._id}</td>
+                                <td>{product.name}</td>
+                                <td>${product.price}</td>
+                                <td>{product.category}</td>
+                                <td>{product.brand}</td>
+                                <td>
+                                    <LinkContainer to={`/admin/product/${product._id}/edit`}>
+                                        <Button variant="light"
+                                                className="btn-sm">
+                                            <i className="fas fa-edit"></i>
                                         </Button>
-                                    </td>
-                                </tr>
-                            ))}
+                                    </LinkContainer>
+                                    <Button variant="danger"
+                                            className="btn-sm"
+                                            onClick={() => deleteHandler(product._id)}>
+                                        <i className="fas fa-trash"></i>
+                                    </Button>
+                                </td>
+                            </tr>
+                        ))}
                         </tbody>
                     </Table>
                 )

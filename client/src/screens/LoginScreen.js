@@ -9,13 +9,12 @@ import FormContainer from '../components/FormContainer';
 import { login } from '../actions/userActions';
 
 
-const LoginScreen = ({location, history}) => {
+const LoginScreen = ({ location, history }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const dispatch = useDispatch();
-    const {loading, error, userInfo} = useSelector(state => state.userLogin);
-
+    const { loading, error, userInfo } = useSelector(state => state.userLogin);
 
     const redirect = location.search ? location.search.split('=')[1] : '/';
 
