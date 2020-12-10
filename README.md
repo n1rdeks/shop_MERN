@@ -1,8 +1,19 @@
 ## Shop on MERN stack (Mongo, Express, React, Node)
 
-After cloning repo need execute command `npm install` in main folder and `client` folder.
+Need to install local; ` Node 12+ version, MongoDB`.
 
-Next, need create .env file
+### Install Dependencies (frontend & backend)
+
+```
+npm install
+cd client
+npm install
+```
+
+### Env Variables
+
+Create a .env file in then root and add the following
+
 ```
 NODE_ENV = mode ('development' or 'production')
 # Don't forget change port in client/package.json
