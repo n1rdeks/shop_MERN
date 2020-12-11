@@ -5,13 +5,15 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Message from '../components/Message';
 import Loader from '../components/Loader';
+import Paginate from '../components/Paginate';
 import { deleteProduct, listProducts, createProduct } from '../actions/productActions';
 import { PRODUCT_CREATE_RESET } from '../constants/productConstants';
 
 
 const ProductListScreen = ({ history, match }) => {
+    const pageNumber = match.params.pageNumber || 1;
     const dispatch = useDispatch();
-    const { loading, error, products } = useSelector(state => state.productList);
+    const { loading, error, products, page, pages } = useSelector(state => state.productList);
     const {
         loading: loadingDelete,
         error: errorDelete,
@@ -34,11 +36,12 @@ const ProductListScreen = ({ history, match }) => {
         if (successCreate) {
             history.push(`/admin/product/${createdProduct._id}/edit`);
         } else {
-            dispatch(listProducts());
+            dispatch(listProducts('', pageNumber));
         }
 
         // added successDelete for update list users after delete.
-    }, [dispatch, history, userInfo, successDelete, successCreate, createdProduct]);
+    }, [dispatch, history, userInfo, successDelete,
+        successCreate, createdProduct, pageNumber]);
 
     const deleteHandler = id => {
         if (window.confirm('Are you sure?')) {
@@ -68,7 +71,7 @@ const ProductListScreen = ({ history, match }) => {
             {loadingCreate && <Loader/>}
             {errorCreate && <Message variant='danger'>{errorCreate}</Message>}
             {loading ? <Loader/> : error ? <Message variant='danger'>{error}</Message> :
-                (
+                (<>
                     <Table striped
                            bordered
                            hover
@@ -96,20 +99,21 @@ const ProductListScreen = ({ history, match }) => {
                                     <LinkContainer to={`/admin/product/${product._id}/edit`}>
                                         <Button variant="light"
                                                 className="btn-sm">
-                                            <i className="fas fa-edit"></i>
+                                            <i className="fas fa-edit"/>
                                         </Button>
                                     </LinkContainer>
                                     <Button variant="danger"
                                             className="btn-sm"
                                             onClick={() => deleteHandler(product._id)}>
-                                        <i className="fas fa-trash"></i>
+                                        <i className="fas fa-trash"/>
                                     </Button>
                                 </td>
                             </tr>
                         ))}
                         </tbody>
                     </Table>
-                )
+                    <Paginate pages={pages} page={page} isAdmin={true}/>
+                </>)
             }
         </>
     );

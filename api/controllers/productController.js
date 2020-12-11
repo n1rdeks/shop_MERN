@@ -5,7 +5,7 @@ import Product from '../models/productModel.js';
 // @route   GET /api/products
 // @access  Public
 const getProducts = expressAsyncHandler(async (req, res) => {
-    const pageSize = 2; // max products on page
+    const pageSize = 8; // max products on page
     const page = Number(req.query.pageNumber) || 1;
 
     const searchKeyword = req.query.searchKeyword ? {
@@ -125,11 +125,21 @@ const createProductReview = expressAsyncHandler(async (req, res) => {
     }
 });
 
+// @route   GET /api/products/top
+// @access  Public
+const getTopProducts = expressAsyncHandler(async (req, res) => {
+    // limit - how take top rated products
+    const products = await Product.find({}).sort({ rating: -1 }).limit(4);
+
+    res.json(products);
+});
+
 export {
     getProducts,
     getProductById,
     deleteProduct,
     createProduct,
     updateProduct,
-    createProductReview
+    createProductReview,
+    getTopProducts
 };
