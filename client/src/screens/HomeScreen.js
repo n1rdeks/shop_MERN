@@ -8,13 +8,14 @@ import Loader from '../components/Loader';
 import Message from '../components/Message';
 
 
-const HomeScreen = () => {
+const HomeScreen = ({ match }) => {
     const dispatch = useDispatch();
+    const searchKeyword = match.params.searchkeyword;
     const { loading, error, products } = useSelector(state => state.productList);
 
     useEffect(() => {
-        dispatch(listProducts());
-    }, [dispatch]);
+        dispatch(listProducts(searchKeyword));
+    }, [dispatch, searchKeyword]);
 
     return (
         <>

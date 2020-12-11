@@ -27,37 +27,22 @@ function App () {
             <Header/>
             <main className="py-3">
                 <Container>
-                    <Route path="/login"
-                           component={LoginScreen}/>
-                    <Route path="/payment"
-                           component={PaymentScreen}/>
-                    <Route path="/placeorder"
-                           component={PlaceOrderScreen}/>
-                    <Route path="/register"
-                           component={RegisterScreen}/>
-                    <Route path="/profile"
-                           component={ProfileScreen}/>
-                    <Route path="/product/:id"
-                           component={ProductScreen}/>
-                    <Route path="/order/:id"
-                           component={OrderScreen}/>
-                    <Route path="/basket/:id?"
-                           component={BasketScreen}/>
-                    <Route path="/shipping"
-                           component={ShippingScreen}/>
-                    <Route path="/admin/userList"
-                           component={UserListScreen}/>
-                    <Route path="/admin/orderList"
-                           component={OrderListScreen}/>
-                    <Route path="/admin/user/:id/edit"
-                           component={UserEditScreen}/>
-                    <Route path="/admin/productList"
-                           component={ProductListScreen}/>
-                    <Route path="/admin/product/:id/edit"
-                           component={ProductEditScreen}/>
-                    <Route path="/"
-                           component={HomeScreen}
-                           exact/>
+                    <Route path="/login" component={LoginScreen}/>
+                    <Route path="/payment" component={PaymentScreen}/>
+                    <Route path="/placeorder" component={PlaceOrderScreen}/>
+                    <Route path="/register" component={RegisterScreen}/>
+                    <Route path="/profile" component={ProfileScreen}/>
+                    <Route path="/product/:id" component={ProductScreen}/>
+                    <Route path="/order/:id" component={OrderScreen}/>
+                    <Route path="/basket/:id?" component={BasketScreen}/>
+                    <Route path="/shipping" component={ShippingScreen}/>
+                    <Route path="/admin/userList" component={UserListScreen}/>
+                    <Route path="/admin/orderList" component={OrderListScreen}/>
+                    <Route path="/admin/user/:id/edit" component={UserEditScreen}/>
+                    <Route path="/admin/productList" component={ProductListScreen}/>
+                    <Route path="/admin/product/:id/edit" component={ProductEditScreen}/>
+                    <Route path="/search/:searchkeyword" component={HomeScreen}/>
+                    <Route path="/" component={HomeScreen} exact/>
                 </Container>
             </main>
             <Footer/>

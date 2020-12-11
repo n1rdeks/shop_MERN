@@ -1,8 +1,11 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Nav, Navbar, Container, NavDropdown } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { logout } from '../actions/userActions';
+import SearchBox from './SearchBox';
 
 
 const Header = () => {
@@ -21,13 +24,19 @@ const Header = () => {
                     collapseOnSelect>
                 <Container>
                     <LinkContainer to="/">
-                        <Navbar.Brand>Shop MERN</Navbar.Brand>
+                        <Navbar.Brand>
+                            <img src="/images/mern.jpg"
+                                 alt="MERN Shop"/>
+                        </Navbar.Brand>
                     </LinkContainer>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
+                        {/*this little hack for send to component history prop*/}
+                        <Route render={({ history }) => <SearchBox history={history}/>}/>
                         <Nav className="ml-auto">
                             <LinkContainer to="/basket">
-                                <Nav.Link><i className="fas fa-shopping-cart"></i> Basket</Nav.Link>
+                                <Nav.Link><i
+                                    className="fas fa-shopping-cart"/>&nbsp;Basket</Nav.Link>
                             </LinkContainer>
                             {userInfo ? (
                                 <NavDropdown title={userInfo.name}
@@ -40,7 +49,7 @@ const Header = () => {
                                     </NavDropdown.Item>
                                 </NavDropdown>
                             ) : (<LinkContainer to="/login">
-                                <Nav.Link><i className="fas fa-user"></i> Sign In</Nav.Link>
+                                <Nav.Link><i className="fas fa-user"/>&nbsp;Sign In</Nav.Link>
                             </LinkContainer>)}
                             {userInfo && userInfo.isAdmin && (
                                 <NavDropdown title='Admin'
