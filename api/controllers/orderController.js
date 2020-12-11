@@ -44,7 +44,7 @@ const getOrderById = expressAsyncHandler(async (req, res) => {
     }
 });
 
-// @route   GET /api/orders/userorders
+// @route   GET /api/orders/userOrders
 // @access  Private
 const getUserOrders = expressAsyncHandler(async (req, res) => {
     const orders = await Order.find({ user: req.user._id });

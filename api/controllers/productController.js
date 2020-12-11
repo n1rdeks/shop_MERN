@@ -5,20 +5,22 @@ import Product from '../models/productModel.js';
 // @route   GET /api/products
 // @access  Public
 const getProducts = expressAsyncHandler(async (req, res) => {
-    const searchKeyword = req.query.searchkeyword ? {
+    const pageSize = 2; // max products on page
+    const page = Number(req.query.pageNumber) || 1;
+
+    const searchKeyword = req.query.searchKeyword ? {
         name: {
-            $regex: req.query.searchkeyword,
+            $regex: req.query.searchKeyword,
             $options: 'i'
         }
     } : {};
 
-    const products = await Product.find({ ...searchKeyword });
-    res.json(products);
-});
-const test = () => {
+    const count = await Product.countDocuments({ ...searchKeyword });
+    const products = await Product.find({ ...searchKeyword }).limit(pageSize)
+                                  .skip(pageSize * (page - 1));
 
-    n;
-};
+    res.json({ products, page, pages: Math.ceil(count / pageSize) });
+});
 
 // @route   GET /api/products/:id
 // @access  Public

@@ -29,7 +29,7 @@ function App () {
                 <Container>
                     <Route path="/login" component={LoginScreen}/>
                     <Route path="/payment" component={PaymentScreen}/>
-                    <Route path="/placeorder" component={PlaceOrderScreen}/>
+                    <Route path="/placeOrder" component={PlaceOrderScreen}/>
                     <Route path="/register" component={RegisterScreen}/>
                     <Route path="/profile" component={ProfileScreen}/>
                     <Route path="/product/:id" component={ProductScreen}/>
@@ -41,7 +41,10 @@ function App () {
                     <Route path="/admin/user/:id/edit" component={UserEditScreen}/>
                     <Route path="/admin/productList" component={ProductListScreen}/>
                     <Route path="/admin/product/:id/edit" component={ProductEditScreen}/>
-                    <Route path="/search/:searchkeyword" component={HomeScreen}/>
+                    <Route path="/search/:searchKeyword" component={HomeScreen} exact/>
+                    <Route path="/page/:pageNumber" component={HomeScreen} exact/>
+                    <Route path="/search/:searchKeyword/page/:pageNumber"
+                           component={HomeScreen} exact/>
                     <Route path="/" component={HomeScreen} exact/>
                 </Container>
             </main>
